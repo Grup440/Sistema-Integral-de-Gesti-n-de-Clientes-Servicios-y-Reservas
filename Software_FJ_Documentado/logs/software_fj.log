@@ -1,0 +1,636 @@
+2026-11-05 23:13:49,557 | INFO | Operación correcta: Registrar cliente válido
+2026-11-05 23:13:49,557 | INFO | Fin de operación #1
+2026-11-05 23:13:49,557 | ERROR | Operación rechazada: Rechazar correo inválido
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 34, in <lambda>
+    paso('Rechazar correo inválido', lambda: cliente(documento='100002', correo='incorrecto'), False)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 30, in cliente
+    return g.registrar_cliente(**datos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 134, in registrar_cliente
+    cliente = Cliente(**datos)
+              ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 140, in __init__
+    self.actualizar_contacto(nombre, correo, telefono)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 185, in actualizar_contacto
+    raise ValidacionError('Correo inválido.')
+fj.modelos.ValidacionError: Correo inválido.
+2026-11-05 23:13:49,561 | INFO | Fin de operación #2
+2026-11-05 23:13:49,561 | ERROR | Operación rechazada: Rechazar documento duplicado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 30, in cliente
+    return g.registrar_cliente(**datos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 138, in registrar_cliente
+    raise DuplicadoError('El documento ya está registrado.')
+fj.modelos.DuplicadoError: El documento ya está registrado.
+2026-11-05 23:13:49,561 | INFO | Fin de operación #3
+2026-11-05 23:13:49,561 | ERROR | Operación rechazada: Rechazar parámetros faltantes
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 38, in <lambda>
+    paso('Rechazar parámetros faltantes', lambda: g.registrar_cliente(), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 134, in registrar_cliente
+    cliente = Cliente(**datos)
+              ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 132, in __init__
+    documento = texto(documento, 'Documento')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 77, in texto
+    raise ValidacionError(f'{campo} es obligatorio.')
+fj.modelos.ValidacionError: Documento es obligatorio.
+2026-11-05 23:13:49,562 | INFO | Fin de operación #4
+2026-11-05 23:13:49,563 | INFO | Operación correcta: Crear sala
+2026-11-05 23:13:49,563 | INFO | Fin de operación #5
+2026-11-05 23:13:49,563 | INFO | Operación correcta: Crear equipo
+2026-11-05 23:13:49,563 | INFO | Fin de operación #6
+2026-11-05 23:13:49,563 | INFO | Operación correcta: Crear asesoría
+2026-11-05 23:13:49,564 | INFO | Fin de operación #7
+2026-11-05 23:13:49,564 | ERROR | Operación rechazada: Rechazar tarifa negativa
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 60, in numero
+    raise ValueError('Fuera del rango permitido')
+ValueError: Fuera del rango permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 46, in <lambda>
+    paso('Rechazar tarifa negativa', lambda: g.agregar_servicio(Sala('Inválida', -1, 10)), False)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 308, in __init__
+    super().__init__(nombre, tarifa)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 208, in __init__
+    self.__tarifa = numero(tarifa, 'Tarifa por hora')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Tarifa por hora: valor inválido.
+2026-11-05 23:13:49,565 | INFO | Fin de operación #8
+2026-11-05 23:13:49,565 | ERROR | Operación rechazada: Rechazar capacidad fraccionaria
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 48, in <lambda>
+    paso('Rechazar capacidad fraccionaria', lambda: Sala('Inválida', 100, 2.5), False)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 314, in __init__
+    raise ValidacionError('Capacidad debe ser entera.')
+fj.modelos.ValidacionError: Capacidad debe ser entera.
+2026-11-05 23:13:49,565 | INFO | Fin de operación #9
+2026-11-05 23:13:49,565 | INFO | Operación correcta: Costo con impuesto y descuento
+2026-11-05 23:13:49,565 | INFO | Fin de operación #10
+2026-11-05 23:13:49,565 | ERROR | Operación rechazada: Rechazar cálculo no finito
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 60, in numero
+    raise ValueError('Fuera del rango permitido')
+ValueError: Fuera del rango permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 52, in <lambda>
+    paso('Rechazar cálculo no finito', lambda: contexto['s'].calcular_costo('NaN', asistentes=5), False)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 319, in validar_parametros
+    self._validar(duracion, parametros, {'asistentes'})
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 292, in _validar
+    numero(duracion, 'Duración en horas', maximo=Decimal('24'))
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Duración en horas: valor inválido.
+2026-11-05 23:13:49,566 | INFO | Fin de operación #11
+2026-11-05 23:13:49,566 | ERROR | Operación rechazada: Rechazar descuento fuera de rango
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 94, in porcentaje
+    raise ValueError('Tasa fuera de rango')
+ValueError: Tasa fuera de rango
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 54, in <lambda>
+    paso('Rechazar descuento fuera de rango', lambda: contexto['s'].calcular_costo(2, descuento=2, asistentes=5), False)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 271, in calcular_costo
+    descuento = porcentaje(descuento, 'Descuento')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 98, in porcentaje
+    raise ValidacionError(f'{campo}: use una tasa entre 0 y 1.') from causa
+fj.modelos.ValidacionError: Descuento: use una tasa entre 0 y 1.
+2026-11-05 23:13:49,566 | INFO | Fin de operación #12
+2026-11-05 23:13:49,566 | ERROR | Operación rechazada: Rechazar exceso de asistentes
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 64, in numero
+    raise ValueError('Supera el máximo permitido')
+ValueError: Supera el máximo permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 61, in <lambda>
+    paso('Rechazar exceso de asistentes', lambda: reservar('s', asistentes=20), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 189, in crear_reserva
+    reserva = Reserva(cliente, servicio, duracion, **parametros)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 424, in __init__
+    self.__total = servicio.calcular_costo(duracion, impuesto=impuesto, descuento=descuento, **parametros)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 321, in validar_parametros
+    asistentes = numero(parametros.get('asistentes'), 'Asistentes', maximo=Decimal(self.__capacidad))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Asistentes: valor inválido.
+2026-11-05 23:13:49,567 | INFO | Fin de operación #13
+2026-11-05 23:13:49,567 | INFO | Operación correcta: Crear reserva de sala
+2026-11-05 23:13:49,567 | INFO | Fin de operación #14
+2026-11-05 23:13:49,567 | ERROR | Operación rechazada: Rechazar doble reserva activa
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 65, in <lambda>
+    paso('Rechazar doble reserva activa', lambda: reservar('s', asistentes=2), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 187, in crear_reserva
+    raise NoDisponibleError('El servicio ya tiene una reserva activa.')
+fj.modelos.NoDisponibleError: El servicio ya tiene una reserva activa.
+2026-11-05 23:13:49,567 | INFO | Fin de operación #15
+2026-11-05 23:13:49,567 | ERROR | Operación rechazada: Rechazar procesamiento sin confirmar
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 67, in <lambda>
+    paso('Rechazar procesamiento sin confirmar', lambda: contexto['r'].procesar(), False)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 494, in procesar
+    raise EstadoError('Se debe confirmar antes de procesar.')
+fj.modelos.EstadoError: Se debe confirmar antes de procesar.
+2026-11-05 23:13:49,567 | INFO | Fin de operación #16
+2026-11-05 23:13:49,567 | INFO | Operación correcta: Confirmar reserva
+2026-11-05 23:13:49,567 | INFO | Fin de operación #17
+2026-11-05 23:13:49,567 | INFO | Operación correcta: Procesar reserva
+2026-11-05 23:13:49,567 | INFO | Fin de operación #18
+2026-11-05 23:13:49,567 | ERROR | Operación rechazada: Rechazar cancelación posterior al proceso
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 73, in <lambda>
+    paso('Rechazar cancelación posterior al proceso', lambda: contexto['r'].cancelar(), False)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 485, in cancelar
+    raise EstadoError('No se puede cancelar una reserva cancelada o procesada.')
+fj.modelos.EstadoError: No se puede cancelar una reserva cancelada o procesada.
+2026-11-05 23:13:49,568 | INFO | Fin de operación #19
+2026-11-05 23:13:49,568 | ERROR | Operación rechazada: Rechazar cantidad de equipos excesiva
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 64, in numero
+    raise ValueError('Supera el máximo permitido')
+ValueError: Supera el máximo permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 75, in <lambda>
+    paso('Rechazar cantidad de equipos excesiva', lambda: reservar('e', cantidad=4), False)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 189, in crear_reserva
+    reserva = Reserva(cliente, servicio, duracion, **parametros)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 424, in __init__
+    self.__total = servicio.calcular_costo(duracion, impuesto=impuesto, descuento=descuento, **parametros)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 358, in validar_parametros
+    cantidad = numero(parametros.get('cantidad'), 'Cantidad', maximo=Decimal(self.__unidades))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Cantidad: valor inválido.
+2026-11-05 23:13:49,568 | INFO | Fin de operación #20
+2026-11-05 23:13:49,568 | INFO | Operación correcta: Reservar equipos
+2026-11-05 23:13:49,568 | INFO | Fin de operación #21
+2026-11-05 23:13:49,568 | INFO | Operación correcta: Cancelar equipos
+2026-11-05 23:13:49,568 | INFO | Fin de operación #22
+2026-11-05 23:13:49,568 | INFO | Operación correcta: Reservar asesoría
+2026-11-05 23:13:49,568 | INFO | Fin de operación #23
+2026-11-05 23:13:49,568 | INFO | Operación correcta: Confirmar asesoría
+2026-11-05 23:13:49,568 | INFO | Fin de operación #24
+2026-11-05 23:13:49,568 | INFO | Operación correcta: Deshabilitar asesoría
+2026-11-05 23:13:49,568 | INFO | Fin de operación #25
+2026-11-05 23:13:49,568 | ERROR | Operación rechazada: Error encadenado al procesar servicio deshabilitado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 498, in procesar
+    self.servicio.validar_parametros(self.duracion, **self.__parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 387, in validar_parametros
+    self._validar(duracion, parametros, {'tema'})
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 300, in _validar
+    raise NoDisponibleError('Servicio deshabilitado.')
+fj.modelos.NoDisponibleError: Servicio deshabilitado.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 87, in <lambda>
+    paso('Error encadenado al procesar servicio deshabilitado', lambda: contexto['ra'].procesar(), False)
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 502, in procesar
+    raise NoDisponibleError('La reserva no puede procesarse actualmente.') from causa
+fj.modelos.NoDisponibleError: La reserva no puede procesarse actualmente.
+2026-11-05 23:13:49,569 | INFO | Fin de operación #26
+2026-11-05 23:13:49,569 | INFO | Operación correcta: Habilitar asesoría
+2026-11-05 23:13:49,569 | INFO | Fin de operación #27
+2026-11-05 23:13:49,569 | INFO | Operación correcta: Procesar asesoría recuperada
+2026-11-05 23:13:49,569 | INFO | Fin de operación #28
+2026-11-05 23:13:49,569 | ERROR | Operación rechazada: Rechazar cliente inexistente
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 93, in <lambda>
+    paso('Rechazar cliente inexistente', lambda: g.crear_reserva('inexistente', contexto['s'].id, 2, asistentes=1), False)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 179, in crear_reserva
+    cliente = self.buscar('cliente', cliente_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 174, in buscar
+    raise NoEncontradoError(f'No existe {tipo} con ese identificador.')
+fj.modelos.NoEncontradoError: No existe cliente con ese identificador.
+2026-11-05 23:13:49,569 | INFO | Fin de operación #29
+2026-11-05 23:13:49,569 | ERROR | Error inesperado: Recuperar fallo técnico inesperado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 98, in inesperado
+    raise RuntimeError('Fallo técnico simulado para probar la frontera exterior')
+RuntimeError: Fallo técnico simulado para probar la frontera exterior
+2026-11-05 23:13:49,569 | INFO | Fin de operación #30
+2026-11-05 23:13:49,569 | INFO | Operación correcta: Continuar después del fallo grave
+2026-11-05 23:13:49,569 | INFO | Fin de operación #31
+2026-11-05 23:13:49,569 | INFO | Cierre de aplicación
+2026-11-05 23:14:40,378 | INFO | Operación correcta: Registrar cliente válido
+2026-11-05 23:14:40,379 | INFO | Fin de operación #1
+2026-11-05 23:14:40,379 | ERROR | Operación rechazada: Rechazar correo inválido
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 34, in <lambda>
+    paso('Rechazar correo inválido', lambda: cliente(documento='100002', correo='incorrecto'), False)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 30, in cliente
+    return g.registrar_cliente(**datos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 134, in registrar_cliente
+    cliente = Cliente(**datos)
+              ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 140, in __init__
+    self.actualizar_contacto(nombre, correo, telefono)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 185, in actualizar_contacto
+    raise ValidacionError('Correo inválido.')
+fj.modelos.ValidacionError: Correo inválido.
+2026-11-05 23:14:40,388 | INFO | Fin de operación #2
+2026-11-05 23:14:40,388 | ERROR | Operación rechazada: Rechazar documento duplicado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 30, in cliente
+    return g.registrar_cliente(**datos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 138, in registrar_cliente
+    raise DuplicadoError('El documento ya está registrado.')
+fj.modelos.DuplicadoError: El documento ya está registrado.
+2026-11-05 23:14:40,388 | INFO | Fin de operación #3
+2026-11-05 23:14:40,388 | ERROR | Operación rechazada: Rechazar parámetros faltantes
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 38, in <lambda>
+    paso('Rechazar parámetros faltantes', lambda: g.registrar_cliente(), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 134, in registrar_cliente
+    cliente = Cliente(**datos)
+              ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 132, in __init__
+    documento = texto(documento, 'Documento')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 77, in texto
+    raise ValidacionError(f'{campo} es obligatorio.')
+fj.modelos.ValidacionError: Documento es obligatorio.
+2026-11-05 23:14:40,389 | INFO | Fin de operación #4
+2026-11-05 23:14:40,389 | INFO | Operación correcta: Crear sala
+2026-11-05 23:14:40,389 | INFO | Fin de operación #5
+2026-11-05 23:14:40,389 | INFO | Operación correcta: Crear equipo
+2026-11-05 23:14:40,389 | INFO | Fin de operación #6
+2026-11-05 23:14:40,389 | INFO | Operación correcta: Crear asesoría
+2026-11-05 23:14:40,389 | INFO | Fin de operación #7
+2026-11-05 23:14:40,389 | ERROR | Operación rechazada: Rechazar tarifa negativa
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 60, in numero
+    raise ValueError('Fuera del rango permitido')
+ValueError: Fuera del rango permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 46, in <lambda>
+    paso('Rechazar tarifa negativa', lambda: g.agregar_servicio(Sala('Inválida', -1, 10)), False)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 308, in __init__
+    super().__init__(nombre, tarifa)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 208, in __init__
+    self.__tarifa = numero(tarifa, 'Tarifa por hora')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Tarifa por hora: valor inválido.
+2026-11-05 23:14:40,389 | INFO | Fin de operación #8
+2026-11-05 23:14:40,390 | ERROR | Operación rechazada: Rechazar capacidad fraccionaria
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 48, in <lambda>
+    paso('Rechazar capacidad fraccionaria', lambda: Sala('Inválida', 100, 2.5), False)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 314, in __init__
+    raise ValidacionError('Capacidad debe ser entera.')
+fj.modelos.ValidacionError: Capacidad debe ser entera.
+2026-11-05 23:14:40,390 | INFO | Fin de operación #9
+2026-11-05 23:14:40,390 | INFO | Operación correcta: Costo con impuesto y descuento
+2026-11-05 23:14:40,390 | INFO | Fin de operación #10
+2026-11-05 23:14:40,390 | ERROR | Operación rechazada: Rechazar cálculo no finito
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 60, in numero
+    raise ValueError('Fuera del rango permitido')
+ValueError: Fuera del rango permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 52, in <lambda>
+    paso('Rechazar cálculo no finito', lambda: contexto['s'].calcular_costo('NaN', asistentes=5), False)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 319, in validar_parametros
+    self._validar(duracion, parametros, {'asistentes'})
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 292, in _validar
+    numero(duracion, 'Duración en horas', maximo=Decimal('24'))
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Duración en horas: valor inválido.
+2026-11-05 23:14:40,390 | INFO | Fin de operación #11
+2026-11-05 23:14:40,391 | ERROR | Operación rechazada: Rechazar descuento fuera de rango
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 94, in porcentaje
+    raise ValueError('Tasa fuera de rango')
+ValueError: Tasa fuera de rango
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 54, in <lambda>
+    paso('Rechazar descuento fuera de rango', lambda: contexto['s'].calcular_costo(2, descuento=2, asistentes=5), False)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 271, in calcular_costo
+    descuento = porcentaje(descuento, 'Descuento')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 98, in porcentaje
+    raise ValidacionError(f'{campo}: use una tasa entre 0 y 1.') from causa
+fj.modelos.ValidacionError: Descuento: use una tasa entre 0 y 1.
+2026-11-05 23:14:40,391 | INFO | Fin de operación #12
+2026-11-05 23:14:40,391 | ERROR | Operación rechazada: Rechazar exceso de asistentes
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 64, in numero
+    raise ValueError('Supera el máximo permitido')
+ValueError: Supera el máximo permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 61, in <lambda>
+    paso('Rechazar exceso de asistentes', lambda: reservar('s', asistentes=20), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 189, in crear_reserva
+    reserva = Reserva(cliente, servicio, duracion, **parametros)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 424, in __init__
+    self.__total = servicio.calcular_costo(duracion, impuesto=impuesto, descuento=descuento, **parametros)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 321, in validar_parametros
+    asistentes = numero(parametros.get('asistentes'), 'Asistentes', maximo=Decimal(self.__capacidad))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Asistentes: valor inválido.
+2026-11-05 23:14:40,392 | INFO | Fin de operación #13
+2026-11-05 23:14:40,392 | INFO | Operación correcta: Crear reserva de sala
+2026-11-05 23:14:40,392 | INFO | Fin de operación #14
+2026-11-05 23:14:40,392 | ERROR | Operación rechazada: Rechazar doble reserva activa
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 65, in <lambda>
+    paso('Rechazar doble reserva activa', lambda: reservar('s', asistentes=2), False)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 187, in crear_reserva
+    raise NoDisponibleError('El servicio ya tiene una reserva activa.')
+fj.modelos.NoDisponibleError: El servicio ya tiene una reserva activa.
+2026-11-05 23:14:40,393 | INFO | Fin de operación #15
+2026-11-05 23:14:40,393 | ERROR | Operación rechazada: Rechazar procesamiento sin confirmar
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 67, in <lambda>
+    paso('Rechazar procesamiento sin confirmar', lambda: contexto['r'].procesar(), False)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 494, in procesar
+    raise EstadoError('Se debe confirmar antes de procesar.')
+fj.modelos.EstadoError: Se debe confirmar antes de procesar.
+2026-11-05 23:14:40,393 | INFO | Fin de operación #16
+2026-11-05 23:14:40,393 | INFO | Operación correcta: Confirmar reserva
+2026-11-05 23:14:40,393 | INFO | Fin de operación #17
+2026-11-05 23:14:40,393 | INFO | Operación correcta: Procesar reserva
+2026-11-05 23:14:40,393 | INFO | Fin de operación #18
+2026-11-05 23:14:40,393 | ERROR | Operación rechazada: Rechazar cancelación posterior al proceso
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 73, in <lambda>
+    paso('Rechazar cancelación posterior al proceso', lambda: contexto['r'].cancelar(), False)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 485, in cancelar
+    raise EstadoError('No se puede cancelar una reserva cancelada o procesada.')
+fj.modelos.EstadoError: No se puede cancelar una reserva cancelada o procesada.
+2026-11-05 23:14:40,393 | INFO | Fin de operación #19
+2026-11-05 23:14:40,393 | ERROR | Operación rechazada: Rechazar cantidad de equipos excesiva
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 64, in numero
+    raise ValueError('Supera el máximo permitido')
+ValueError: Supera el máximo permitido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 75, in <lambda>
+    paso('Rechazar cantidad de equipos excesiva', lambda: reservar('e', cantidad=4), False)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 59, in reservar
+    return g.crear_reserva(contexto['c'].id, contexto[clave].id, duracion, **p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 189, in crear_reserva
+    reserva = Reserva(cliente, servicio, duracion, **parametros)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 424, in __init__
+    self.__total = servicio.calcular_costo(duracion, impuesto=impuesto, descuento=descuento, **parametros)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 267, in calcular_costo
+    self.validar_parametros(duracion, **parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 358, in validar_parametros
+    cantidad = numero(parametros.get('cantidad'), 'Cantidad', maximo=Decimal(self.__unidades))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 68, in numero
+    raise ValidacionError(f'{campo}: valor inválido.') from causa
+fj.modelos.ValidacionError: Cantidad: valor inválido.
+2026-11-05 23:14:40,394 | INFO | Fin de operación #20
+2026-11-05 23:14:40,394 | INFO | Operación correcta: Reservar equipos
+2026-11-05 23:14:40,394 | INFO | Fin de operación #21
+2026-11-05 23:14:40,394 | INFO | Operación correcta: Cancelar equipos
+2026-11-05 23:14:40,394 | INFO | Fin de operación #22
+2026-11-05 23:14:40,394 | INFO | Operación correcta: Reservar asesoría
+2026-11-05 23:14:40,394 | INFO | Fin de operación #23
+2026-11-05 23:14:40,394 | INFO | Operación correcta: Confirmar asesoría
+2026-11-05 23:14:40,394 | INFO | Fin de operación #24
+2026-11-05 23:14:40,394 | INFO | Operación correcta: Deshabilitar asesoría
+2026-11-05 23:14:40,395 | INFO | Fin de operación #25
+2026-11-05 23:14:40,395 | ERROR | Operación rechazada: Error encadenado al procesar servicio deshabilitado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 498, in procesar
+    self.servicio.validar_parametros(self.duracion, **self.__parametros)
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 387, in validar_parametros
+    self._validar(duracion, parametros, {'tema'})
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 300, in _validar
+    raise NoDisponibleError('Servicio deshabilitado.')
+fj.modelos.NoDisponibleError: Servicio deshabilitado.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 87, in <lambda>
+    paso('Error encadenado al procesar servicio deshabilitado', lambda: contexto['ra'].procesar(), False)
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/modelos.py", line 502, in procesar
+    raise NoDisponibleError('La reserva no puede procesarse actualmente.') from causa
+fj.modelos.NoDisponibleError: La reserva no puede procesarse actualmente.
+2026-11-05 23:14:40,395 | INFO | Fin de operación #26
+2026-11-05 23:14:40,395 | INFO | Operación correcta: Habilitar asesoría
+2026-11-05 23:14:40,395 | INFO | Fin de operación #27
+2026-11-05 23:14:40,395 | INFO | Operación correcta: Procesar asesoría recuperada
+2026-11-05 23:14:40,395 | INFO | Fin de operación #28
+2026-11-05 23:14:40,395 | ERROR | Operación rechazada: Rechazar cliente inexistente
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 93, in <lambda>
+    paso('Rechazar cliente inexistente', lambda: g.crear_reserva('inexistente', contexto['s'].id, 2, asistentes=1), False)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 179, in crear_reserva
+    cliente = self.buscar('cliente', cliente_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 174, in buscar
+    raise NoEncontradoError(f'No existe {tipo} con ese identificador.')
+fj.modelos.NoEncontradoError: No existe cliente con ese identificador.
+2026-11-05 23:14:40,395 | INFO | Fin de operación #29
+2026-11-05 23:14:40,395 | ERROR | Error inesperado: Recuperar fallo técnico inesperado
+Traceback (most recent call last):
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/gestion.py", line 99, in ejecutar
+    resultado = accion()
+                ^^^^^^^^
+  File "/workspace/scratch/6340644ebd7a/Software_FJ_Documentado/fj/demo.py", line 98, in inesperado
+    raise RuntimeError('Fallo técnico simulado para probar la frontera exterior')
+RuntimeError: Fallo técnico simulado para probar la frontera exterior
+2026-11-05 23:14:40,395 | INFO | Fin de operación #30
+2026-11-05 23:14:40,395 | INFO | Operación correcta: Continuar después del fallo grave
+2026-11-05 23:14:40,395 | INFO | Fin de operación #31
+2026-11-05 23:14:40,395 | INFO | Cierre de aplicación

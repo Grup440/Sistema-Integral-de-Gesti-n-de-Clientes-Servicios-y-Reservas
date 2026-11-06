@@ -1,0 +1,40 @@
+classDiagram
+    Entidad <|-- Cliente
+    Entidad <|-- Servicio
+    Entidad <|-- Reserva
+    Servicio <|-- Sala
+    Servicio <|-- Equipo
+    Servicio <|-- Asesoria
+    Reserva --> Cliente
+    Reserva --> Servicio
+    Gestor o-- Cliente
+    Gestor o-- Servicio
+    Gestor o-- Reserva
+    Gestor --> Registro
+    class Entidad {
+        <<abstract>>
+        +id
+        +describir()
+    }
+    class Servicio {
+        <<abstract>>
+        +calcular_costo()
+        +calcular_base()
+        +validar_parametros()
+        +cambiar_disponibilidad()
+    }
+    class Cliente {
+        +actualizar_contacto()
+    }
+    class Reserva {
+        +confirmar()
+        +procesar()
+        +cancelar()
+    }
+    class Gestor {
+        +ejecutar()
+        +registrar_cliente()
+        +agregar_servicio()
+        +crear_reserva()
+        +buscar()
+    }

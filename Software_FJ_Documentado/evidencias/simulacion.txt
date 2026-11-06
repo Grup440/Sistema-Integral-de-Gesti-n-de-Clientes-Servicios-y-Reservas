@@ -1,0 +1,33 @@
+[OK] Registrar cliente válido
+[CONTROLADO] Rechazar correo inválido: Correo inválido.
+[CONTROLADO] Rechazar documento duplicado: El documento ya está registrado.
+[CONTROLADO] Rechazar parámetros faltantes: Documento es obligatorio.
+[OK] Crear sala
+[OK] Crear equipo
+[OK] Crear asesoría
+[CONTROLADO] Rechazar tarifa negativa: Tarifa por hora: valor inválido.
+[CONTROLADO] Rechazar capacidad fraccionaria: Capacidad debe ser entera.
+[OK] Costo con impuesto y descuento
+[CONTROLADO] Rechazar cálculo no finito: Duración en horas: valor inválido.
+[CONTROLADO] Rechazar descuento fuera de rango: Descuento: use una tasa entre 0 y 1.
+[CONTROLADO] Rechazar exceso de asistentes: Asistentes: valor inválido.
+[OK] Crear reserva de sala
+[CONTROLADO] Rechazar doble reserva activa: El servicio ya tiene una reserva activa.
+[CONTROLADO] Rechazar procesamiento sin confirmar: Se debe confirmar antes de procesar.
+[OK] Confirmar reserva
+[OK] Procesar reserva
+[CONTROLADO] Rechazar cancelación posterior al proceso: No se puede cancelar una reserva cancelada o procesada.
+[CONTROLADO] Rechazar cantidad de equipos excesiva: Cantidad: valor inválido.
+[OK] Reservar equipos
+[OK] Cancelar equipos
+[OK] Reservar asesoría
+[OK] Confirmar asesoría
+[OK] Deshabilitar asesoría
+[CONTROLADO] Error encadenado al procesar servicio deshabilitado: La reserva no puede procesarse actualmente.
+[OK] Habilitar asesoría
+[OK] Procesar asesoría recuperada
+[CONTROLADO] Rechazar cliente inexistente: No existe cliente con ese identificador.
+[RECUPERADO] Recuperar fallo técnico inesperado: RuntimeError. Consulte el log.
+[OK] Continuar después del fallo grave
+
+SIMULACIÓN: 31 operaciones; 31 resultados coinciden con lo esperado.

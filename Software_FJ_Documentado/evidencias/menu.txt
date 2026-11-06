@@ -1,0 +1,15 @@
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 8 Disponibilidad | 0 Salir
+Opción: CLIENTES
+Sin registros.
+SERVICIOS
+Sin registros.
+RESERVAS
+Sin registros.
+[OK] Menú 7
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 8 Disponibilidad | 0 Salir
+Opción: [CONTROLADO] Menú mal: Opción inválida.
+
+SOFTWARE FJ | 1 Cliente | 2 Servicio | 3 Reserva | 4 Confirmar | 5 Procesar | 6 Cancelar | 7 Listar | 8 Disponibilidad | 0 Salir
+Opción: 

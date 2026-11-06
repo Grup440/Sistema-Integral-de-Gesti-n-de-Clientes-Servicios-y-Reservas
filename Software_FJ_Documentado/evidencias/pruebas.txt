@@ -1,0 +1,24 @@
+test_abstraccion (test_sistema.SistemaTests.test_abstraccion) ... ok
+test_cadena_conversion (test_sistema.SistemaTests.test_cadena_conversion) ... ok
+test_calculo_inconsistente (test_sistema.SistemaTests.test_calculo_inconsistente) ... ok
+test_cancelacion_libera (test_sistema.SistemaTests.test_cancelacion_libera) ... ok
+test_causa_y_estado_conservado (test_sistema.SistemaTests.test_causa_y_estado_conservado) ... ok
+test_ciclo_reserva (test_sistema.SistemaTests.test_ciclo_reserva) ... ok
+test_contacto_atomico (test_sistema.SistemaTests.test_contacto_atomico) ... ok
+test_duplicado_sin_mutacion (test_sistema.SistemaTests.test_duplicado_sin_mutacion) ... ok
+test_fallo_no_inserta_reserva (test_sistema.SistemaTests.test_fallo_no_inserta_reserva) ... ok
+test_identidad_encapsulada (test_sistema.SistemaTests.test_identidad_encapsulada) ... ok
+test_numeros_invalidos (test_sistema.SistemaTests.test_numeros_invalidos) ... ok
+test_parametros_obligatorios (test_sistema.SistemaTests.test_parametros_obligatorios) ... ok
+test_polimorfismo (test_sistema.SistemaTests.test_polimorfismo) ... ok
+test_recuperacion_y_log (test_sistema.SistemaTests.test_recuperacion_y_log) ... ok
+test_sobrecarga_opcionales (test_sistema.SistemaTests.test_sobrecarga_opcionales) ... ok
+test_tasas_cero_desde_menu (test_sistema.TasasMenuTests.test_tasas_cero_desde_menu) ... ok
+test_tasas_invalidas (test_sistema.TasasMenuTests.test_tasas_invalidas) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.008s
+
+OK
+[RECUPERADO] Fallo simulado: RuntimeError. Consulte el log.
+[OK] Siguiente operación

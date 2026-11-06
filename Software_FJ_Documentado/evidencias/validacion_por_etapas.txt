@@ -1,0 +1,82 @@
+
+ETAPA 1. Clientes y entidades
+test_abstraccion (test_sistema.SistemaTests.test_abstraccion) ... ok
+test_contacto_atomico (test_sistema.SistemaTests.test_contacto_atomico) ... ok
+test_identidad_encapsulada (test_sistema.SistemaTests.test_identidad_encapsulada) ... ok
+test_duplicado_sin_mutacion (test_sistema.SistemaTests.test_duplicado_sin_mutacion) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK
+
+ETAPA 2. Servicios y costos
+test_sobrecarga_opcionales (test_sistema.SistemaTests.test_sobrecarga_opcionales) ... ok
+test_polimorfismo (test_sistema.SistemaTests.test_polimorfismo) ... ok
+test_numeros_invalidos (test_sistema.SistemaTests.test_numeros_invalidos) ... ok
+test_parametros_obligatorios (test_sistema.SistemaTests.test_parametros_obligatorios) ... ok
+test_calculo_inconsistente (test_sistema.SistemaTests.test_calculo_inconsistente) ... ok
+test_tasas_cero_desde_menu (test_sistema.TasasMenuTests.test_tasas_cero_desde_menu) ... ok
+test_tasas_invalidas (test_sistema.TasasMenuTests.test_tasas_invalidas) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.004s
+
+OK
+
+ETAPA 3. Reservas
+test_ciclo_reserva (test_sistema.SistemaTests.test_ciclo_reserva) ... ok
+test_cancelacion_libera (test_sistema.SistemaTests.test_cancelacion_libera) ... ok
+test_fallo_no_inserta_reserva (test_sistema.SistemaTests.test_fallo_no_inserta_reserva) ... ok
+test_causa_y_estado_conservado (test_sistema.SistemaTests.test_causa_y_estado_conservado) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+
+OK
+
+ETAPA 4. Excepciones y logs
+test_cadena_conversion (test_sistema.SistemaTests.test_cadena_conversion) ... ok
+test_recuperacion_y_log (test_sistema.SistemaTests.test_recuperacion_y_log) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.005s
+
+OK
+[RECUPERADO] Fallo simulado: RuntimeError. Consulte el log.
+[OK] Siguiente operación
+
+ETAPA 5. Simulación completa
+[OK] Registrar cliente válido
+[CONTROLADO] Rechazar correo inválido: Correo inválido.
+[CONTROLADO] Rechazar documento duplicado: El documento ya está registrado.
+[CONTROLADO] Rechazar parámetros faltantes: Documento es obligatorio.
+[OK] Crear sala
+[OK] Crear equipo
+[OK] Crear asesoría
+[CONTROLADO] Rechazar tarifa negativa: Tarifa por hora: valor inválido.
+[CONTROLADO] Rechazar capacidad fraccionaria: Capacidad debe ser entera.
+[OK] Costo con impuesto y descuento
+[CONTROLADO] Rechazar cálculo no finito: Duración en horas: valor inválido.
+[CONTROLADO] Rechazar descuento fuera de rango: Descuento: use una tasa entre 0 y 1.
+[CONTROLADO] Rechazar exceso de asistentes: Asistentes: valor inválido.
+[OK] Crear reserva de sala
+[CONTROLADO] Rechazar doble reserva activa: El servicio ya tiene una reserva activa.
+[CONTROLADO] Rechazar procesamiento sin confirmar: Se debe confirmar antes de procesar.
+[OK] Confirmar reserva
+[OK] Procesar reserva
+[CONTROLADO] Rechazar cancelación posterior al proceso: No se puede cancelar una reserva cancelada o procesada.
+[CONTROLADO] Rechazar cantidad de equipos excesiva: Cantidad: valor inválido.
+[OK] Reservar equipos
+[OK] Cancelar equipos
+[OK] Reservar asesoría
+[OK] Confirmar asesoría
+[OK] Deshabilitar asesoría
+[CONTROLADO] Error encadenado al procesar servicio deshabilitado: La reserva no puede procesarse actualmente.
+[OK] Habilitar asesoría
+[OK] Procesar asesoría recuperada
+[CONTROLADO] Rechazar cliente inexistente: No existe cliente con ese identificador.
+[RECUPERADO] Recuperar fallo técnico inesperado: RuntimeError. Consulte el log.
+[OK] Continuar después del fallo grave
+
+SIMULACIÓN: 31 operaciones; 31 resultados coinciden con lo esperado.
