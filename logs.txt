@@ -1,0 +1,29 @@
+
+2026-11-19 03:23:01,121 - ERROR - El nombre no puede estar vacío
+2026-11-19 03:23:01,123 - ERROR - El correo no es válido
+2026-11-19 03:23:01,123 - ERROR - Costo por hora inválido
+2026-11-19 03:23:01,124 - ERROR - La duración debe ser mayor que cero
+2026-11-19 03:23:01,250 - ERROR - El nombre no puede estar vacío
+2026-11-19 03:23:01,250 - ERROR - El correo no es válido
+2026-11-19 03:23:01,250 - ERROR - Costo por hora inválido
+2026-11-19 03:23:01,251 - ERROR - La duración debe ser mayor que cero
+2026-11-19 03:42:45,421 - ERROR - El nombre no puede estar vacío
+2026-11-19 03:42:45,421 - ERROR - El correo no es válido
+2026-11-19 03:42:45,421 - ERROR - Costo por hora inválido
+2026-11-19 03:42:45,422 - ERROR - La duración debe ser mayor que cero
+2026-11-19 04:04:21,241 - ERROR - El nombre no puede estar vacío
+2026-11-19 04:04:21,242 - ERROR - El correo no es válido
+2026-11-19 04:04:21,242 - ERROR - Costo por hora inválido
+2026-11-19 04:04:21,242 - ERROR - La duración debe ser mayor que cero
+2026-11-19 04:04:39,512 - ERROR - El nombre no puede estar vacío
+2026-11-19 04:04:39,513 - ERROR - El correo no es válido
+2026-11-19 04:04:39,513 - ERROR - Costo por hora inválido
+2026-11-19 04:04:39,513 - ERROR - La duración debe ser mayor que cero
+2026-11-19 04:04:39,724 - ERROR - El nombre no puede estar vacío
+2026-11-19 04:04:39,724 - ERROR - El correo no es válido
+2026-11-19 04:04:39,724 - ERROR - Costo por hora inválido
+2026-11-19 04:04:39,725 - ERROR - La duración debe ser mayor que cero
+2026-11-19 04:06:18,165 - ERROR - El nombre no puede estar vacío
+2026-11-19 04:06:18,166 - ERROR - El correo no es válido
+2026-11-19 04:06:18,166 - ERROR - Costo por hora inválido
+2026-11-19 04:06:18,167 - ERROR - La duración debe ser mayor que cero
